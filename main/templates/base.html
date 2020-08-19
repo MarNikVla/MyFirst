@@ -17,7 +17,7 @@
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/apple-touch-icon.png"
           sizes="180x180">
-    <link rel="icon" href={% static 'main/siamese.png' %} sizes="32x32" type="image/png">
+    <link rel="icon" href={% static 'main/images/siamese.png' %} sizes="32x32" type="image/png">
     <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16"
           type="image/png">
     <link rel="manifest" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/manifest.json">
@@ -44,7 +44,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+    <link href="{% static "main/css/main.css" %}"  rel="stylesheet">
 </head>
 <body>
 <header>
@@ -121,7 +121,7 @@
                     <div class="card mb-4 shadow-sm">
                         <a href="//ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B8%D1%84-%D1%82%D0%BE%D0%B9-%D0%B1%D0%BE%D0%B1"
                            title="Той боб" target="_blank">
-                            <img src="{% static 'main/images/Toj-bob.jpg' %}" class="img-fluid" alt="Той боб">
+                            <img src="{% static 'main/images/Toj-bob.jpg' %}" id="flip-image" class="img-fluid" alt="Той боб">
                         </a>
                         <div class="card-body">
                             <p class="card-text">
@@ -130,10 +130,9 @@
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary flip-horizontally-button">Rigth-Left</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary flip-vertically-button">Up-Down</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
@@ -153,8 +152,8 @@
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary rotate-left-button">По часовой</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary rotate-right-button">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary image-backward">асовой</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary image-forward">dit</button>
                                 </div>
                                 <small class="text-muted">9 mins</small>
                             </div>
@@ -184,8 +183,11 @@
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
         crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
 <script type="text/javascript" src="{% static 'main/js/root_rotate.js' %}"></script>
-<script type="text/javascript" src="{% static 'main/js/my_rotate.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
 
 </body>
 </html>
