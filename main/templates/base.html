@@ -36,6 +36,10 @@
             -ms-user-select: none;
             user-select: none;
         }
+        .img-fluid{
+            min-width: 100%;
+            height: 100%;
+        }
 
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
@@ -139,9 +143,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <a href="///ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F_%D0%B3%D0%BE%D0%BB%D1%83%D0%B1%D0%B0%D1%8F_%D0%BA%D0%BE%D1%88%D0%BA%D0%B0"
+                        <a
                            title="Русская голубая" target="_blank">
-                            <img src="{% static 'main/images/Russian blue.jpg' %}" class="img-fluid" alt="Русская голубая">
+                            <img src="{% static 'main/images/Russian blue0.jpg' %}" id="move-image"
+                                 class="img-fluid card-img-top" alt="Русская голубая">
                         </a>
                         <div class="card-body">
                             <p class="card-text">
@@ -182,9 +187,6 @@
 <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
         crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="//cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
 <script type="text/javascript" src="{% static 'main/js/root_rotate.js' %}"></script>
 <script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>

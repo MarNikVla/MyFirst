@@ -41,3 +41,37 @@ $(".flip-vertically-button").on("click", function () {
 
     }
 });
+
+// function clickCounter(){
+//     let currentCount =1
+//     return function () {
+//         return currentCount++;
+//     }
+// }
+
+
+function makeCount(){
+    let clickCount= $(this).data("clickCount");
+    if (!clickCount)
+        clickCount =1
+    else
+        clickCount++
+    $(this).data("clickCount", clickCount)
+    return clickCount%5
+}
+
+$('.image-backward').click(function(){
+    clickCount=makeCount()
+    console.log((clickCount))
+    console.log($("#move-image").attr('src',function (ind,currentImage) {
+        return currentImage.slice(0, currentImage.length-5)+clickCount + ".jpg"
+    }))
+})
+
+$('#move-image').click(function(){
+    clickCount=makeCount()
+    console.log((clickCount))
+    console.log($("#move-image").attr('src',function (ind,currentImage) {
+        return currentImage.slice(0, currentImage.length-5)+clickCount + ".jpg"
+    }))
+})
