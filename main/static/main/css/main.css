@@ -1,14 +1,11 @@
 .img-flip-horizontally {
-  /*-webkit-transform: scaleX(-1);*/
   transform: scaleX(-1);
 }
 
 .img-flip-vertically {
-  /*-webkit-transform: scaleY(-1);*/
   transform: scaleY(-1);
 }
 
 .img-flip-vertically.img-flip-horizontally {
-  /*-webkit-transform: scaleY(-1);*/
   transform: scale(-1, -1);
 }
