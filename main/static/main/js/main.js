@@ -1,4 +1,3 @@
-
 //Поворот изображения ID=rotate-image
 $(document).ready(function rotate() {
     var angle = 0;
@@ -40,24 +39,24 @@ $(".flip-vertically-button").on("click", function () {
 
 //вспомогательная функция посчета количества кликов,
 //возвращает количество кликов деленное по модулю на n
-function makeCount(n){
-    let clickCount= $(this).data("clickCount");
+function makeCount(n) {
+    let clickCount = $(this).data("clickCount");
     if (!clickCount)
-        clickCount =1
+        clickCount = 1
     else
         clickCount++
     $(this).data("clickCount", clickCount)
-    return clickCount%n
+    return clickCount % n
 }
 
 //по клику на .image-backward изменяет src #move-image
 //добавляя число (clickCount) в конец названия
 //пример:
 //Russian blue0.jpg --> Russian blue1.jpg --> Russian blue2.jpg
-$('.image-move').click(function(){
-    clickCount=makeCount(5)
-    $("#move-image").attr('src',function (index,currentImage) {
-        return currentImage.slice(0, currentImage.length-5)+clickCount + ".jpg"
+$('.image-move').click(function () {
+    clickCount = makeCount(5)
+    $("#move-image").attr('src', function (index, currentImage) {
+        return currentImage.slice(0, currentImage.length - 5) + clickCount + ".jpg"
     })
 })
 
@@ -65,9 +64,23 @@ $('.image-move').click(function(){
 //добавляя число (clickCount) в конец названия
 //пример:
 //Russian blue0.jpg --> Russian blue1.jpg --> Russian blue2.jpg
-$('#move-image').click(function(){
-    clickCount=makeCount(5)
-    $("#move-image").attr('src',function (ind,currentImage) {
-        return currentImage.slice(0, currentImage.length-5)+clickCount + ".jpg"
+$('#move-image').click(function () {
+    clickCount = makeCount(5)
+    $("#move-image").attr('src', function (ind, currentImage) {
+        return currentImage.slice(0, currentImage.length - 5) + clickCount + ".jpg"
+    })
+})
+
+//по клику на #cats_breeds отправляет ajax запрос на сервер
+// получает измененный href для #cats_breeds
+//примеры ответа:
+//https://yandex.ru/images/search?text=Мейн-кун
+//https://yandex.ru/images/search?text=Короткошерстный ориентал
+// и т.д.
+$('#cats_breeds').click(function () {
+    // console.log(this.id)
+    $.get('/get_breed/', function (data) {
+        $('#cats_breeds').attr('href', data);
+
     })
 })
