@@ -1,0 +1,11 @@
+.img-flip-horizontally {
+  transform: scaleX(-1);
+}
+
+.img-flip-vertically {
+  transform: scaleY(-1);
+}
+
+.img-flip-vertically.img-flip-horizontally {
+  transform: scale(-1, -1);
+}
