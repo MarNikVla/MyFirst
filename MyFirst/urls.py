@@ -27,7 +27,6 @@ urlpatterns = [
     path('get_href/', get_href, name='get_href'),
 
 ]
-
-# if settings.DEBUG:
-urlpatterns += static(settings.STATIC_URL,
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
                            document_root = settings.STATIC_ROOT)
