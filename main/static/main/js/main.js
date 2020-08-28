@@ -1,6 +1,6 @@
 //Поворот изображения ID=rotate-image
 $(document).ready(function rotate() {
-    var angle = 0;
+    let angle = 0;
     // Поворот изображения по часовой стрелке
     $(".rotate-left-button").on("click", function () {
             angle += 90;
@@ -42,10 +42,10 @@ $(".flip-vertically-button").on("click", function () {
 function makeCount(n) {
     let clickCount = $(this).data("clickCount");
     if (!clickCount)
-        clickCount = 1
+        clickCount = 1;
     else
-        clickCount++
-    $(this).data("clickCount", clickCount)
+        clickCount++;
+    $(this).data("clickCount", clickCount);
     return clickCount % n
 }
 
@@ -54,22 +54,22 @@ function makeCount(n) {
 //пример:
 //Russian blue0.jpg --> Russian blue1.jpg --> Russian blue2.jpg
 $('.image-move').click(function () {
-    clickCount = makeCount(5)
+    clickCount = makeCount(5);
     $("#move-image").attr('src', function (index, currentImage) {
         return currentImage.slice(0, currentImage.length - 5) + clickCount + ".jpg"
     })
-})
+});
 
 //по клику на #move-image изменяет src #move-image
 //добавляя число (clickCount) в конец названия
 //пример:
 //Russian blue0.jpg --> Russian blue1.jpg --> Russian blue2.jpg
 $('#move-image').click(function () {
-    clickCount = makeCount(5)
+    clickCount = makeCount(5);
     $("#move-image").attr('src', function (ind, currentImage) {
         return currentImage.slice(0, currentImage.length - 5) + clickCount + ".jpg"
     })
-})
+});
 
 //по клику на #cats_breeds отправляет ajax запрос на сервер
 // получает измененный href для #cats_breeds
@@ -79,8 +79,21 @@ $('#move-image').click(function () {
 // и т.д.
 $('#cats_breeds').click(function () {
     // console.log(this.id)
-    $.get('/get_breed/', function (data) {
+    $.get('/get_href/',{id:this.id}, function (data) {
         $('#cats_breeds').attr('href', data);
-
     })
-})
+});
+
+$('#cats_friends').click(function () {
+    // console.log(this.id)
+    $.get('/get_href/',{id:this.id}, function (data) {
+        $('#cats_friends').attr('href', data);
+    })
+});
+
+$('#cats_enemies').click(function () {
+    // console.log(this.id)
+    $.get('/get_href/',{id:this.id}, function (data) {
+        $('#cats_enemies').attr('href', data);
+    })
+});

@@ -19,12 +19,12 @@ from django.contrib import admin
 from django.urls import path
 
 
-from main.views import Index, get_breed_href
+from main.views import Index, get_href
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
     path('admin/', admin.site.urls),
-    path('get_breed/', get_breed_href, name='get_breed'),
+    path('get_href/', get_href, name='get_href'),
 
 ]
 
