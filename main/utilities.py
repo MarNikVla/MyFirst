@@ -7,6 +7,7 @@ FRIENDS_OF_CATS_LIST = LISTS_DIR/"список друзей кошек.txt"
 ENEMIES_OF_CATS_LIST = LISTS_DIR/"список врагов кошек.txt"
 BREEDS_OF_CATS_LIST = LISTS_DIR/"породы кошек.txt"
 
+
 """Получает друга кошек из списка"""
 def get_friend():
     friends = (FRIENDS_OF_CATS_LIST.read_text(encoding="utf-8"))

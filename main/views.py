@@ -24,13 +24,13 @@ class Index(TemplateView):
 """
 def get_href(request):
 
-    ID_DICT={
+    ID_DICT = {
         "cats_breeds": get_breed(),
         "cats_friends": get_friend(),
         "cats_enemies": get_enemy(),
     }
 
     if request.method == 'GET':
-        id = request.GET['id']
-        href = "//yandex.ru/images/search?text="+ID_DICT[id]
+        _id = request.GET['id']
+        href = "//yandex.ru/images/search?text="+ID_DICT[_id]
     return HttpResponse(href)
